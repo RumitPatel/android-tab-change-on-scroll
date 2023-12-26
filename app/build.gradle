@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 30
-
+    compileSdk 34
+    namespace 'com.rumit.tabchangeonscroll'
     defaultConfig {
-        applicationId "duggu.scroll.tabchange"
-        minSdkVersion 21
-        targetSdkVersion 30
+        applicationId "com.rumit.tabchangeonscroll"
+        minSdk 21
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -21,7 +21,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    namespace 'duggu.scroll.tabchange'
+
 }
 
 dependencies {

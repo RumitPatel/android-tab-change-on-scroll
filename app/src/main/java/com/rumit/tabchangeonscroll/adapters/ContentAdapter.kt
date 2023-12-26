@@ -1,11 +1,11 @@
-package duggu.scroll.tabchange.adapters
+package com.rumit.tabchangeonscroll.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import duggu.scroll.tabchange.R
-import duggu.scroll.tabchange.models.ContentInfo
+import com.rumit.tabchangeonscroll.R
+import com.rumit.tabchangeonscroll.models.ContentInfo
 import kotlinx.android.synthetic.main.test_data_view_1.view.llType0
 import kotlinx.android.synthetic.main.test_data_view_1.view.tvContentTitle1
 import kotlinx.android.synthetic.main.test_data_view_2.view.llType1

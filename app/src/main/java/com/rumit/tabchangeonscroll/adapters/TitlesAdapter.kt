@@ -1,12 +1,12 @@
-package duggu.scroll.tabchange.adapters
+package com.rumit.tabchangeonscroll.adapters
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import duggu.scroll.tabchange.R
-import duggu.scroll.tabchange.models.TitleInfo
+import com.rumit.tabchangeonscroll.R
+import com.rumit.tabchangeonscroll.models.TitleInfo
 import kotlinx.android.synthetic.main.item_titles.view.tvSubCatTextISF
 
 class TitlesAdapter(

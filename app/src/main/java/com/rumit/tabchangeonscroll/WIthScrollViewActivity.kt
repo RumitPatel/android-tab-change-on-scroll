@@ -1,4 +1,4 @@
-package duggu.scroll.tabchange
+package com.rumit.tabchangeonscroll
 
 import android.content.Context
 import android.graphics.Rect
@@ -8,9 +8,9 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
-import duggu.scroll.tabchange.adapters.TitlesAdapter
-import duggu.scroll.tabchange.util.TAG
-import duggu.scroll.tabchange.util.getTitles
+import com.rumit.tabchangeonscroll.adapters.TitlesAdapter
+import com.rumit.tabchangeonscroll.util.TAG
+import com.rumit.tabchangeonscroll.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_scrollview.sv
 import kotlinx.android.synthetic.main.activity_with_scrollview.tvTitles
 import kotlinx.android.synthetic.main.test_data_view_1.llType0

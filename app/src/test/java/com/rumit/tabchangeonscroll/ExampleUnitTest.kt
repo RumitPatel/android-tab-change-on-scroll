@@ -1,4 +1,4 @@
-package duggu.scroll.tabchange
+package com.rumit.tabchangeonscroll
 
 import org.junit.Test
 

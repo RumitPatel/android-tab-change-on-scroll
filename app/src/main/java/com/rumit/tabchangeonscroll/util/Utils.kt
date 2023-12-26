@@ -1,6 +1,6 @@
-package duggu.scroll.tabchange.util
+package com.rumit.tabchangeonscroll.util
 
-import duggu.scroll.tabchange.models.TitleInfo
+import com.rumit.tabchangeonscroll.models.TitleInfo
 
 const val TAG = "@***@***@"
 fun getTitles() : ArrayList<TitleInfo?> {

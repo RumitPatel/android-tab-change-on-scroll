@@ -1,13 +1,13 @@
-package duggu.scroll.tabchange
+package com.rumit.tabchangeonscroll
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import duggu.scroll.tabchange.adapters.ContentAdapter
-import duggu.scroll.tabchange.adapters.TitlesAdapter
-import duggu.scroll.tabchange.models.ContentInfo
-import duggu.scroll.tabchange.util.getTitles
+import com.rumit.tabchangeonscroll.adapters.ContentAdapter
+import com.rumit.tabchangeonscroll.adapters.TitlesAdapter
+import com.rumit.tabchangeonscroll.models.ContentInfo
+import com.rumit.tabchangeonscroll.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_recyclerview.rvServiceList
 import kotlinx.android.synthetic.main.activity_with_recyclerview.tvTitles
 

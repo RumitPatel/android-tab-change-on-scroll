@@ -1,4 +1,4 @@
-package duggu.scroll.tabchange.models
+package com.rumit.tabchangeonscroll.models
 
 data class TitleInfo(
     val titleName: String? = "",
