@@ -4,24 +4,26 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.btnWithRecyclerView
-import kotlinx.android.synthetic.main.activity_main.btnWithScrollView
+import com.rumit.tabchangeonscroll.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var mContext: Context
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         mContext = this
 
-        btnWithScrollView.setOnClickListener {
+
+        binding.btnWithScrollView.setOnClickListener {
             startActivity(Intent(mContext, WIthScrollViewActivity::class.java))
         }
 
-        btnWithRecyclerView.setOnClickListener {
+        binding.btnWithRecyclerView.setOnClickListener {
             startActivity(Intent(mContext, WIthRecyclerViewActivity::class.java))
         }
     }

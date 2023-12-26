@@ -1,18 +1,21 @@
 package com.rumit.tabchangeonscroll
 
+import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.rumit.tabchangeonscroll.adapters.ContentAdapter
 import com.rumit.tabchangeonscroll.adapters.TitlesAdapter
+import com.rumit.tabchangeonscroll.databinding.ActivityWithRecyclerviewBinding
 import com.rumit.tabchangeonscroll.models.ContentInfo
 import com.rumit.tabchangeonscroll.util.getTitles
-import kotlinx.android.synthetic.main.activity_with_recyclerview.rvServiceList
-import kotlinx.android.synthetic.main.activity_with_recyclerview.tvTitles
 
 
 class WIthRecyclerViewActivity : AppCompatActivity() {
+
+    private lateinit var mContext: Context
+    private lateinit var binding: ActivityWithRecyclerviewBinding
 
     private var linearLayoutManager: LinearLayoutManager? = null
     private var titlesAdapter: TitlesAdapter? = null
@@ -21,7 +24,10 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_with_recyclerview)
+        binding = ActivityWithRecyclerviewBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        mContext = this
 
         val contentInfo = ArrayList<ContentInfo?>()
         contentInfo.addAll(getCatModel(0, "Scientific Classification", 0))
@@ -29,18 +35,18 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
         contentInfo.addAll(getCatModel(2, "Description Content", 2))
 
 
-        tvTitles.apply {
+        binding.tvTitles.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            titlesAdapter = TitlesAdapter(getTitles()) {
+            titlesAdapter = TitlesAdapter(mContext, getTitles()) {
                 selectedTitlePosition = it
                 setTitleSelected()
-                rvServiceList.layoutManager?.scrollToPosition(selectedTitlePosition)
+                binding.rvServiceList.layoutManager?.scrollToPosition(selectedTitlePosition)
             }
             adapter = titlesAdapter
         }
 
         linearLayoutManager = LinearLayoutManager(this)
-        rvServiceList.apply {
+        binding.rvServiceList.apply {
             layoutManager = linearLayoutManager
             contentAdapter = ContentAdapter(contentInfo)
             adapter = contentAdapter
@@ -53,7 +59,9 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
                                 if (selectedTitlePosition != sd.index) {
                                     selectedTitlePosition = sd.index
                                     setTitleSelected()
-                                    tvTitles.layoutManager?.scrollToPosition(selectedTitlePosition)
+                                    binding.tvTitles.layoutManager?.scrollToPosition(
+                                        selectedTitlePosition
+                                    )
                                 }
                             }
                         }

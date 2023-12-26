@@ -5,61 +5,66 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rumit.tabchangeonscroll.R
+import com.rumit.tabchangeonscroll.databinding.ItemContentBinding
+import com.rumit.tabchangeonscroll.databinding.ItemTitlesBinding
 import com.rumit.tabchangeonscroll.models.ContentInfo
-import kotlinx.android.synthetic.main.test_data_view_1.view.llType0
-import kotlinx.android.synthetic.main.test_data_view_1.view.tvContentTitle1
-import kotlinx.android.synthetic.main.test_data_view_2.view.llType1
-import kotlinx.android.synthetic.main.test_data_view_2.view.tvContentTitle2
-import kotlinx.android.synthetic.main.test_data_view_3.view.llType2
-import kotlinx.android.synthetic.main.test_data_view_3.view.tvContentTitle3
 
 class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
-    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    RecyclerView.Adapter<ContentAdapter.MyViewHolder>() {
     override fun getItemCount(): Int {
         return dataList.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return CategoryViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_content, parent, false)
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val binding: ItemContentBinding =
+            ItemContentBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+
+        return MyViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ContentAdapter.MyViewHolder, position: Int) {
         if (holder is CategoryViewHolder) {
             holder.bind()
         }
     }
 
-    inner class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class CategoryViewHolder(val binding: ItemContentBinding) : MyViewHolder(binding) {
         fun bind() {
             dataList[layoutPosition]?.let { model ->
                 when (model.contentType) {
                     0 -> {
-                        itemView.tvContentTitle1.text = model.name
 
-                        itemView.llType0.visibility = View.VISIBLE
-                        itemView.llType1.visibility = View.GONE
-                        itemView.llType2.visibility = View.GONE
+                        binding.testDataView0.tvContentTitle1.text = model.name
+
+                        binding.testDataView0.llType0.visibility = View.VISIBLE
+                        binding.testDataView1.llType1.visibility = View.GONE
+                        binding.testDataView2.llType2.visibility = View.GONE
                     }
 
                     1 -> {
-                        itemView.tvContentTitle2.text = model.name
+                        binding.testDataView1.tvContentTitle2.text = model.name
 
-                        itemView.llType0.visibility = View.GONE
-                        itemView.llType1.visibility = View.VISIBLE
-                        itemView.llType2.visibility = View.GONE
+                        binding.testDataView0.llType0.visibility = View.GONE
+                        binding.testDataView1.llType1.visibility = View.VISIBLE
+                        binding.testDataView2.llType2.visibility = View.GONE
                     }
 
                     2 -> {
-                        itemView.tvContentTitle3.text = model.name
+                        binding.testDataView2.tvContentTitle3.text = model.name
 
-                        itemView.llType0.visibility = View.GONE
-                        itemView.llType1.visibility = View.GONE
-                        itemView.llType2.visibility = View.VISIBLE
+                        binding.testDataView0.llType0.visibility = View.GONE
+                        binding.testDataView1.llType1.visibility = View.GONE
+                        binding.testDataView2.llType2.visibility = View.VISIBLE
                     }
                 }
             }
         }
     }
+
+    open class MyViewHolder(val viewBinding: ItemContentBinding) :
+        RecyclerView.ViewHolder(viewBinding.root)
 }
