@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import duggu.scroll.tabchange.adapters.TitlesAdapter
-import duggu.scroll.tabchange.models.ContentInfo
+import duggu.scroll.tabchange.util.TAG
 import duggu.scroll.tabchange.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_scrollview.sv
 import kotlinx.android.synthetic.main.activity_with_scrollview.tvTitles
@@ -39,12 +39,18 @@ class WIthScrollViewActivity : AppCompatActivity() {
                 selectedTitlePosition = it
                 setTitleSelected()
 
-                if (selectedTitlePosition == 0) {
-                    sv.scrollTo(0, llType0.top)
-                } else if (selectedTitlePosition == 1) {
-                    sv.scrollTo(0, llType1.top)
-                } else if (selectedTitlePosition == 2) {
-                    sv.scrollTo(0, llType2.top)
+                when (selectedTitlePosition) {
+                    0 -> {
+                        sv.scrollTo(0, llType0.top)
+                    }
+
+                    1 -> {
+                        sv.scrollTo(0, llType1.top)
+                    }
+
+                    2 -> {
+                        sv.scrollTo(0, llType2.top)
+                    }
                 }
             }
             adapter = titlesAdapter
@@ -60,15 +66,15 @@ class WIthScrollViewActivity : AppCompatActivity() {
                         if (!tvContentTitle1.getLocalVisibleRect(scrollBounds)
                             || scrollBounds.height() < tvContentTitle1.height
                         ) {
-                            Log.e("RUM", "tvCatTextISF4 APPEAR PARCIALY")
+                            Log.e(TAG, "tvContentTitle1 displayed partial portion")
                         } else {
-                            Log.e("RUM", "tvCatTextISF4 APPEAR FULLY!!!")
+                            Log.e(TAG, "tvContentTitle1 displayed full portion")
                         }
                         selectedTitlePosition = 0
                         setTitleSelected()
 
                     } else {
-                        Log.e("RUM", "tvCatTextISF4 No")
+                        Log.e(TAG, "tvCatTextISF4 No")
                     }
                 }
 
@@ -77,15 +83,15 @@ class WIthScrollViewActivity : AppCompatActivity() {
                         if (!tvContentTitle2.getLocalVisibleRect(scrollBounds)
                             || scrollBounds.height() < tvContentTitle2.height
                         ) {
-                            Log.e("RUM", "tvCatTextISF5 APPEAR PARCIALY")
+                            Log.e(TAG, "tvContentTitle2 displayed partial portion")
                         } else {
-                            Log.e("RUM", "tvCatTextISF5 APPEAR FULLY!!!")
+                            Log.e(TAG, "tvContentTitle2 displayed full portion")
                         }
                         selectedTitlePosition = 1
                         setTitleSelected()
 
                     } else {
-                        Log.e("RUM", "tvCatTextISF5 No")
+                        Log.e(TAG, "tvCatTextISF5 No")
                     }
                 }
 
@@ -94,25 +100,19 @@ class WIthScrollViewActivity : AppCompatActivity() {
                         if (!tvContentTitle3.getLocalVisibleRect(scrollBounds)
                             || scrollBounds.height() < tvContentTitle3.height
                         ) {
-                            Log.e("RUM", "tvCatTextISF6 APPEAR PARCIALY")
+                            Log.e(TAG, "tvContentTitle3 displayed partial portion")
                         } else {
-                            Log.e("RUM", "tvCatTextISF6 APPEAR FULLY!!!")
+                            Log.e(TAG, "tvContentTitle3 displayed full portion")
                         }
                         selectedTitlePosition = 2
                         setTitleSelected()
 
                     } else {
-                        Log.e("RUM", "tvCatTextISF6 No")
+                        Log.e(TAG, "tvCatTextISF6 No")
                     }
                 }
             })
         }
-    }
-
-    private fun getCatModel(type: Int, model: String, index: Int): ArrayList<ContentInfo> {
-        val contentInfoList = ArrayList<ContentInfo>()
-        contentInfoList.add(ContentInfo(type, model, index))
-        return contentInfoList
     }
 
     private fun setTitleSelected() {
