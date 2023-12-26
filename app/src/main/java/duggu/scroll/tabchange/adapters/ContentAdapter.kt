@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import duggu.scroll.tabchange.R
 import duggu.scroll.tabchange.models.ContentInfo
 import kotlinx.android.synthetic.main.test_data_view_1.view.llType4
-import kotlinx.android.synthetic.main.test_data_view_1.view.tvCatTextISF4
+import kotlinx.android.synthetic.main.test_data_view_1.view.tvContentTitle1
 import kotlinx.android.synthetic.main.test_data_view_2.view.llType5
-import kotlinx.android.synthetic.main.test_data_view_2.view.tvCatTextISF5
+import kotlinx.android.synthetic.main.test_data_view_2.view.tvContentTitle2
 import kotlinx.android.synthetic.main.test_data_view_3.view.llType6
-import kotlinx.android.synthetic.main.test_data_view_3.view.tvCatTextISF6
+import kotlinx.android.synthetic.main.test_data_view_3.view.tvContentTitle3
 
 class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -36,7 +36,7 @@ class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
             dataList[layoutPosition]?.let { model ->
                 when (model.contentType) {
                     0 -> {
-                        itemView.tvCatTextISF4.text = model.name
+                        itemView.tvContentTitle1.text = model.name
 
                         itemView.llType4.visibility = View.VISIBLE
                         itemView.llType5.visibility = View.GONE
@@ -44,7 +44,7 @@ class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
                     }
 
                     1 -> {
-                        itemView.tvCatTextISF5.text = model.name
+                        itemView.tvContentTitle2.text = model.name
 
                         itemView.llType4.visibility = View.GONE
                         itemView.llType5.visibility = View.VISIBLE
@@ -52,7 +52,7 @@ class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
                     }
 
                     2 -> {
-                        itemView.tvCatTextISF6.text = model.name
+                        itemView.tvContentTitle3.text = model.name
 
                         itemView.llType4.visibility = View.GONE
                         itemView.llType5.visibility = View.GONE

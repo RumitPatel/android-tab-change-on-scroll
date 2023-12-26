@@ -14,11 +14,11 @@ import duggu.scroll.tabchange.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_scrollview.sv
 import kotlinx.android.synthetic.main.activity_with_scrollview.tvTitles
 import kotlinx.android.synthetic.main.test_data_view_1.llType4
-import kotlinx.android.synthetic.main.test_data_view_1.tvCatTextISF4
+import kotlinx.android.synthetic.main.test_data_view_1.tvContentTitle1
 import kotlinx.android.synthetic.main.test_data_view_2.llType5
-import kotlinx.android.synthetic.main.test_data_view_2.tvCatTextISF5
+import kotlinx.android.synthetic.main.test_data_view_2.tvContentTitle2
 import kotlinx.android.synthetic.main.test_data_view_3.llType6
-import kotlinx.android.synthetic.main.test_data_view_3.tvCatTextISF6
+import kotlinx.android.synthetic.main.test_data_view_3.tvContentTitle3
 
 
 class WIthScrollViewActivity : AppCompatActivity() {
@@ -62,10 +62,10 @@ class WIthScrollViewActivity : AppCompatActivity() {
             sv.getHitRect(scrollBounds)
 
             sv.setOnScrollChangeListener(NestedScrollView.OnScrollChangeListener { v, scrollX, scrollY, oldScrollX, oldScrollY ->
-                if (tvCatTextISF4 != null) {
-                    if (tvCatTextISF4.getLocalVisibleRect(scrollBounds)) {
-                        if (!tvCatTextISF4.getLocalVisibleRect(scrollBounds)
-                            || scrollBounds.height() < tvCatTextISF4.height
+                if (tvContentTitle1 != null) {
+                    if (tvContentTitle1.getLocalVisibleRect(scrollBounds)) {
+                        if (!tvContentTitle1.getLocalVisibleRect(scrollBounds)
+                            || scrollBounds.height() < tvContentTitle1.height
                         ) {
                             Log.e("RUM", "tvCatTextISF4 APPEAR PARCIALY")
                         } else {
@@ -79,10 +79,10 @@ class WIthScrollViewActivity : AppCompatActivity() {
                     }
                 }
 
-                if (tvCatTextISF5 != null) {
-                    if (tvCatTextISF5.getLocalVisibleRect(scrollBounds)) {
-                        if (!tvCatTextISF5.getLocalVisibleRect(scrollBounds)
-                            || scrollBounds.height() < tvCatTextISF5.height
+                if (tvContentTitle2 != null) {
+                    if (tvContentTitle2.getLocalVisibleRect(scrollBounds)) {
+                        if (!tvContentTitle2.getLocalVisibleRect(scrollBounds)
+                            || scrollBounds.height() < tvContentTitle2.height
                         ) {
                             Log.e("RUM", "tvCatTextISF5 APPEAR PARCIALY")
                         } else {
@@ -96,10 +96,10 @@ class WIthScrollViewActivity : AppCompatActivity() {
                     }
                 }
 
-                if (tvCatTextISF6 != null) {
-                    if (tvCatTextISF6.getLocalVisibleRect(scrollBounds)) {
-                        if (!tvCatTextISF6.getLocalVisibleRect(scrollBounds)
-                            || scrollBounds.height() < tvCatTextISF6.height
+                if (tvContentTitle3 != null) {
+                    if (tvContentTitle3.getLocalVisibleRect(scrollBounds)) {
+                        if (!tvContentTitle3.getLocalVisibleRect(scrollBounds)
+                            || scrollBounds.height() < tvContentTitle3.height
                         ) {
                             Log.e("RUM", "tvCatTextISF6 APPEAR PARCIALY")
                         } else {
