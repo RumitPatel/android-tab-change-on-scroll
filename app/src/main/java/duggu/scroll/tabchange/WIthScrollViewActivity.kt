@@ -11,14 +11,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import duggu.scroll.tabchange.adapters.TitlesAdapter
 import duggu.scroll.tabchange.models.ContentInfo
 import duggu.scroll.tabchange.util.getTitles
-import kotlinx.android.synthetic.main.activity_with_scrollview.llType4
-import kotlinx.android.synthetic.main.activity_with_scrollview.llType5
-import kotlinx.android.synthetic.main.activity_with_scrollview.llType6
 import kotlinx.android.synthetic.main.activity_with_scrollview.sv
-import kotlinx.android.synthetic.main.activity_with_scrollview.tvCatTextISF4
-import kotlinx.android.synthetic.main.activity_with_scrollview.tvCatTextISF5
-import kotlinx.android.synthetic.main.activity_with_scrollview.tvCatTextISF6
 import kotlinx.android.synthetic.main.activity_with_scrollview.tvTitles
+import kotlinx.android.synthetic.main.test_data_view_1.llType4
+import kotlinx.android.synthetic.main.test_data_view_1.tvCatTextISF4
+import kotlinx.android.synthetic.main.test_data_view_2.llType5
+import kotlinx.android.synthetic.main.test_data_view_2.tvCatTextISF5
+import kotlinx.android.synthetic.main.test_data_view_3.llType6
+import kotlinx.android.synthetic.main.test_data_view_3.tvCatTextISF6
 
 
 class WIthScrollViewActivity : AppCompatActivity() {
