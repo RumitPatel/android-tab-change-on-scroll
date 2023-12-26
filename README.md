@@ -1,0 +1,3 @@
+# Tab Change While scrolling...
+
+This project demonstrates the change in tabs on scrolling of ScrollView or RecyclerView.
