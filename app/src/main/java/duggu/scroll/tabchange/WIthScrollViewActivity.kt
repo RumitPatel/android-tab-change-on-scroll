@@ -13,11 +13,11 @@ import duggu.scroll.tabchange.models.ContentInfo
 import duggu.scroll.tabchange.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_scrollview.sv
 import kotlinx.android.synthetic.main.activity_with_scrollview.tvTitles
-import kotlinx.android.synthetic.main.test_data_view_1.llType4
+import kotlinx.android.synthetic.main.test_data_view_1.llType0
 import kotlinx.android.synthetic.main.test_data_view_1.tvContentTitle1
-import kotlinx.android.synthetic.main.test_data_view_2.llType5
+import kotlinx.android.synthetic.main.test_data_view_2.llType1
 import kotlinx.android.synthetic.main.test_data_view_2.tvContentTitle2
-import kotlinx.android.synthetic.main.test_data_view_3.llType6
+import kotlinx.android.synthetic.main.test_data_view_3.llType2
 import kotlinx.android.synthetic.main.test_data_view_3.tvContentTitle3
 
 
@@ -40,14 +40,11 @@ class WIthScrollViewActivity : AppCompatActivity() {
                 setTitleSelected()
 
                 if (selectedTitlePosition == 0) {
-//                    llType6.parent.requestChildFocus(llType4,llType4);
-                    sv.scrollTo(0, llType4.top)
+                    sv.scrollTo(0, llType0.top)
                 } else if (selectedTitlePosition == 1) {
-//                    llType6.parent.requestChildFocus(llType5,llType5);
-                    sv.scrollTo(0, llType5.top)
+                    sv.scrollTo(0, llType1.top)
                 } else if (selectedTitlePosition == 2) {
-//                    llType6.parent.requestChildFocus(llType6,llType6);
-                    sv.scrollTo(0, llType6.top)
+                    sv.scrollTo(0, llType2.top)
                 }
             }
             adapter = titlesAdapter

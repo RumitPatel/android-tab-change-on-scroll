@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import duggu.scroll.tabchange.R
 import duggu.scroll.tabchange.models.ContentInfo
-import kotlinx.android.synthetic.main.test_data_view_1.view.llType4
+import kotlinx.android.synthetic.main.test_data_view_1.view.llType0
 import kotlinx.android.synthetic.main.test_data_view_1.view.tvContentTitle1
-import kotlinx.android.synthetic.main.test_data_view_2.view.llType5
+import kotlinx.android.synthetic.main.test_data_view_2.view.llType1
 import kotlinx.android.synthetic.main.test_data_view_2.view.tvContentTitle2
-import kotlinx.android.synthetic.main.test_data_view_3.view.llType6
+import kotlinx.android.synthetic.main.test_data_view_3.view.llType2
 import kotlinx.android.synthetic.main.test_data_view_3.view.tvContentTitle3
 
 class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
@@ -38,25 +38,25 @@ class ContentAdapter(var dataList: ArrayList<ContentInfo?>) :
                     0 -> {
                         itemView.tvContentTitle1.text = model.name
 
-                        itemView.llType4.visibility = View.VISIBLE
-                        itemView.llType5.visibility = View.GONE
-                        itemView.llType6.visibility = View.GONE
+                        itemView.llType0.visibility = View.VISIBLE
+                        itemView.llType1.visibility = View.GONE
+                        itemView.llType2.visibility = View.GONE
                     }
 
                     1 -> {
                         itemView.tvContentTitle2.text = model.name
 
-                        itemView.llType4.visibility = View.GONE
-                        itemView.llType5.visibility = View.VISIBLE
-                        itemView.llType6.visibility = View.GONE
+                        itemView.llType0.visibility = View.GONE
+                        itemView.llType1.visibility = View.VISIBLE
+                        itemView.llType2.visibility = View.GONE
                     }
 
                     2 -> {
                         itemView.tvContentTitle3.text = model.name
 
-                        itemView.llType4.visibility = View.GONE
-                        itemView.llType5.visibility = View.GONE
-                        itemView.llType6.visibility = View.VISIBLE
+                        itemView.llType0.visibility = View.GONE
+                        itemView.llType1.visibility = View.GONE
+                        itemView.llType2.visibility = View.VISIBLE
                     }
                 }
             }
