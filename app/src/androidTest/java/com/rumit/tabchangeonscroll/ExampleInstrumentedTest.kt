@@ -1,4 +1,4 @@
-package duggu.scroll.tabchange
+package com.rumit.tabchangeonscroll
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

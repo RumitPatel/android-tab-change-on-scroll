@@ -1,4 +1,4 @@
-package duggu.scroll.tabchange
+package com.rumit.tabchangeonscroll
 
 import android.content.Context
 import android.content.Intent
