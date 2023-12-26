@@ -12,16 +12,16 @@ import androidx.recyclerview.widget.RecyclerView
 import duggu.scroll.tabchange.adapters.ContentAdapter
 import duggu.scroll.tabchange.adapters.TitlesAdapter
 import duggu.scroll.tabchange.models.ContentInfo
-import duggu.scroll.tabchange.models.TitleInfo
+import duggu.scroll.tabchange.util.getTitles
 import kotlinx.android.synthetic.main.activity_with_recyclerview.llType4
 import kotlinx.android.synthetic.main.activity_with_recyclerview.llType5
 import kotlinx.android.synthetic.main.activity_with_recyclerview.llType6
 import kotlinx.android.synthetic.main.activity_with_recyclerview.rvServiceList
-import kotlinx.android.synthetic.main.activity_with_recyclerview.rvSubCatAct
 import kotlinx.android.synthetic.main.activity_with_recyclerview.sv
 import kotlinx.android.synthetic.main.activity_with_recyclerview.tvCatTextISF4
 import kotlinx.android.synthetic.main.activity_with_recyclerview.tvCatTextISF5
 import kotlinx.android.synthetic.main.activity_with_recyclerview.tvCatTextISF6
+import kotlinx.android.synthetic.main.activity_with_recyclerview.tvTitles
 
 
 class WIthRecyclerViewActivity : AppCompatActivity() {
@@ -37,7 +37,10 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
         }
     }*/
 
-    private fun RecyclerView.smoothSnapToPosition(position: Int, snapMode: Int = LinearSmoothScroller.SNAP_TO_START) {
+    private fun RecyclerView.smoothSnapToPosition(
+        position: Int,
+        snapMode: Int = LinearSmoothScroller.SNAP_TO_START
+    ) {
         val smoothScroller = object : LinearSmoothScroller(this.context) {
             override fun getVerticalSnapPreference(): Int = snapMode
             override fun getHorizontalSnapPreference(): Int = snapMode
@@ -50,32 +53,25 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_with_recyclerview)
 
-        val subCatModel = ArrayList<TitleInfo?>()
         val contentInfo = ArrayList<ContentInfo?>()
-
-        subCatModel.add(TitleInfo("Classification", true))
-        contentInfo.addAll(getCatModel(0,"Scientific Classification", 0))
-
-        subCatModel.add(TitleInfo("Overview", false))
-        contentInfo.addAll(getCatModel(1,"Overview Content", 1))
-
-        subCatModel.add(TitleInfo("Description", false))
-        contentInfo.addAll(getCatModel(2,"Description Content", 2))
+        contentInfo.addAll(getCatModel(0, "Scientific Classification", 0))
+        contentInfo.addAll(getCatModel(1, "Overview Content", 1))
+        contentInfo.addAll(getCatModel(2, "Description Content", 2))
 
 
-        rvSubCatAct.apply {
+        tvTitles.apply {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-            titlesAdapter = TitlesAdapter(subCatModel) {
+            titlesAdapter = TitlesAdapter(getTitles()) {
                 selectedTitlePosition = it
                 setTitleSelected()
 
-                if(selectedTitlePosition == 0) {
+                if (selectedTitlePosition == 0) {
 //                    llType6.parent.requestChildFocus(llType4,llType4);
                     sv.scrollTo(0, llType4.top)
-                } else if(selectedTitlePosition == 1) {
+                } else if (selectedTitlePosition == 1) {
 //                    llType6.parent.requestChildFocus(llType5,llType5);
                     sv.scrollTo(0, llType5.top)
-                } else if(selectedTitlePosition == 2) {
+                } else if (selectedTitlePosition == 2) {
 //                    llType6.parent.requestChildFocus(llType6,llType6);
                     sv.scrollTo(0, llType6.top)
                 }
@@ -88,8 +84,8 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
 
 //                rvServiceList.smoothSnapToPosition(selectedTitlePosition)
 
-/*                smoothScroller.targetPosition = selectedTitlePosition;
-                rvServiceList.layoutManager?.startSmoothScroll(smoothScroller);*/
+                /*                smoothScroller.targetPosition = selectedTitlePosition;
+                                rvServiceList.layoutManager?.startSmoothScroll(smoothScroller);*/
             }
             adapter = titlesAdapter
 
@@ -167,7 +163,7 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
                                 if (selectedTitlePosition != sd.index) {
                                     selectedTitlePosition = sd.index
                                     setTitleSelected()
-                                    rvSubCatAct.layoutManager?.scrollToPosition(
+                                    tvTitles.layoutManager?.scrollToPosition(
                                         selectedTitlePosition
                                     )
                                 }
@@ -181,9 +177,9 @@ class WIthRecyclerViewActivity : AppCompatActivity() {
 
     }
 
-    private fun getCatModel(type:Int, model: String, index: Int): ArrayList<ContentInfo> {
+    private fun getCatModel(type: Int, model: String, index: Int): ArrayList<ContentInfo> {
         val contentInfoList = ArrayList<ContentInfo>()
-        contentInfoList.add(ContentInfo(type,model, index))
+        contentInfoList.add(ContentInfo(type, model, index))
         return contentInfoList
     }
 
