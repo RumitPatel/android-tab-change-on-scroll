@@ -68,7 +68,7 @@ class WIthScrollViewActivity : AppCompatActivity() {
                     setTitleSelected()
 
                 } else {
-                    Log.e(TAG, "tvCatTextISF4 No")
+                    Log.e(TAG, "tvContentTitle1 Not displayed")
                 }
 
                 if (binding.testDataView1.tvContentTitle2.getLocalVisibleRect(scrollBounds)) {
@@ -83,7 +83,7 @@ class WIthScrollViewActivity : AppCompatActivity() {
                     setTitleSelected()
 
                 } else {
-                    Log.e(TAG, "tvCatTextISF5 No")
+                    Log.e(TAG, "tvContentTitle2 Not displayed")
                 }
 
                 if (binding.testDataView2.tvContentTitle3.getLocalVisibleRect(scrollBounds)) {
@@ -98,7 +98,7 @@ class WIthScrollViewActivity : AppCompatActivity() {
                     setTitleSelected()
 
                 } else {
-                    Log.e(TAG, "tvCatTextISF6 No")
+                    Log.e(TAG, "tvContentTitle3 Not displayed")
                 }
             })
         }
