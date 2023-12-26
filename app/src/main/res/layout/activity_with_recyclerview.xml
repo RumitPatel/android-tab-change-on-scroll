@@ -20,6 +20,7 @@
             android:id="@+id/tvTitles"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_margin="14dp"
             android:background="@color/white"
             android:clipToPadding="true"
             android:padding="6dp" />
@@ -28,6 +29,7 @@
             android:id="@+id/rvServiceList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"
             android:paddingBottom="120dp" />

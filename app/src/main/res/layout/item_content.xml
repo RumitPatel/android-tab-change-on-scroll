@@ -11,15 +11,15 @@
 
         <include
             android:id="@+id/test_data_view_0"
-            layout="@layout/test_data_view_1" />
+            layout="@layout/test_data_view_0" />
 
         <include
             android:id="@+id/test_data_view_1"
-            layout="@layout/test_data_view_2" />
+            layout="@layout/test_data_view_1" />
 
         <include
             android:id="@+id/test_data_view_2"
-            layout="@layout/test_data_view_3" />
+            layout="@layout/test_data_view_2" />
     </LinearLayout>
 
 </ScrollView>

@@ -20,6 +20,7 @@
             android:id="@+id/tvTitles"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:layout_margin="14dp"
             android:background="@color/white"
             android:clipToPadding="true"
             android:padding="6dp" />
@@ -28,7 +29,8 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/sv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,15 +39,15 @@
 
             <include
                 android:id="@+id/test_data_view_0"
-                layout="@layout/test_data_view_1" />
+                layout="@layout/test_data_view_0" />
 
             <include
                 android:id="@+id/test_data_view_1"
-                layout="@layout/test_data_view_2" />
+                layout="@layout/test_data_view_1" />
 
             <include
                 android:id="@+id/test_data_view_2"
-                layout="@layout/test_data_view_3" />
+                layout="@layout/test_data_view_2" />
 
         </LinearLayout>
 
