@@ -48,11 +48,7 @@ class WIthScrollViewActivity : AppCompatActivity() {
                 }
             }
             adapter = titlesAdapter
-
-
         }
-
-
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val scrollBounds = Rect()
@@ -111,7 +107,6 @@ class WIthScrollViewActivity : AppCompatActivity() {
                 }
             })
         }
-
     }
 
     private fun getCatModel(type: Int, model: String, index: Int): ArrayList<ContentInfo> {
@@ -123,7 +118,4 @@ class WIthScrollViewActivity : AppCompatActivity() {
     private fun setTitleSelected() {
         titlesAdapter?.updateList(selectedTitlePosition)
     }
-
-
 }
-
